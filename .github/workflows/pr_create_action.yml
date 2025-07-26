@@ -1,4 +1,4 @@
-title: PR Create Action
+name: PR Create Action
 
 on:
   pull_request:
