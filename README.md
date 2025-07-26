@@ -10,4 +10,7 @@ This Week I Learn
 ## Pull Reaquests
 
 양식에 맞게 제작합니다.
+
 제목에는 날짜를 포함합니다.
+
+> 예시 PR : https://github.com/ysy-mogagko/WIL/pull/1
