@@ -23,4 +23,3 @@ jobs:
         uses: peter-evans/create-pull-request@v3
         with:
           title: ${{ steps.set_param.outputs.title }}
-          body-path: .github/worktree/pr_template.md
