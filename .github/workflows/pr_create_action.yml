@@ -1,0 +1,30 @@
+name: PR Create Action
+
+on:
+  push:
+    branches:
+      - study/*
+      
+jobs:
+  create_pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: set date
+        id: set_param 
+        run: |
+          date=$(TZ=Asia/Seoul date +'%Y%m%d')
+          TITLE="$date ${{ github.actor }}"
+          echo "title=$TITLE" >> $GITHUB_OUTPUT
+
+      - name: pr create use gh cli
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr create \
+            --base main \
+            --head "${GITHUB_REF##*/}" \
+            --title "${{ steps.set_param.outputs.title }}" \
+            --body-file  .github/pull_request_template.md
