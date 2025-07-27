@@ -1,9 +1,9 @@
 name: PR Create Action
 
 on:
-  pull_request:
-    types:
-      - opened
+  push:
+    branches:
+      - study/*
       
 jobs:
   create_pr:
