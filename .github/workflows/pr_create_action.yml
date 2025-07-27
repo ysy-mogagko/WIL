@@ -10,17 +10,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         
-      - name: Set Date
+      - name: set date
         id: set_param 
         run: |
           date=$(TZ=Asia/Seoul date +'%Y%m%d')
           TITLE="$date ${{ github.actor }}"
           echo "title=$TITLE" >> $GITHUB_OUTPUT
 
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v3
-        with:
-          title: ${{ steps.set_param.outputs.title }}
-          base: main
+      - name: pr create use gh cli
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr create \
+            --base main \
+            --head "${GITHUB_REF##*/}" \
+            --title "${{ steps.set_param.outputs.title }}" \
+            --body-file  .github/pull_request_template.md
