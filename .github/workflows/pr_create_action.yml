@@ -29,6 +29,6 @@ jobs:
         run: |
           gh pr create \
             --base main \
-            --head "${GITHUB_REF##*/}" \
+            --head "${GITHUB_REF#refs/heads/}" \
             --title "${{ steps.set_param.outputs.title }}" \
             --body-file  .github/pull_request_template.md
