@@ -59,6 +59,8 @@ jobs:
             gh pr edit  --add-label "업무"
           elif [ "$type" = "proj" ]; then
             gh pr edit  --add-label "프로젝트"
+          elif [ "$type" = "cli" ]; then
+            gh pr edit  --add-label "자격증"
           else
             echo "No specific label for type: $type"
           fi
