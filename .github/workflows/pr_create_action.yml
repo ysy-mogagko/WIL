@@ -44,7 +44,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         if : ${{ !contains(github.ref_name, 'study') }}
         run: |
-          type=$(echo "${GITHUB_REF#refs/heads/study/}" | cut -d'/' -f1)
+          type=$(echo "${GITHUB_REF#refs/heads/}" | cut -d'/' -f1)
           if [ "$type" = "cs" ]; then
             gh pr edit  --add-label "Computer Science"
           elif [ "$type" = "db" ]; then
