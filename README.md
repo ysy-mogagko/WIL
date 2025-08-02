@@ -41,7 +41,7 @@
 
 공부한 내용에 따라 선택합니다. (원하는 내용이 없다면 본인이 추가 부탁드립니다)
 
-## Branch 접두어를 통한 Pull Request 자동생성
+## 3. Branch 접두어를 통한 Pull Request 자동생성
 
 브랜치의 경우 접두어를 넣을경우 Pull Request 가 자동으로 편리하게 생성됩니다.
 
@@ -56,4 +56,4 @@
 
 다양한 prefix가 있으니 아래 가이드 링크를 구경해보세요.
 
-[Branch prefix 가이드](https://github.com/ysy-mogagko/WIL/blob/main/Guide/branch-prefix.md)
+Branch prefix 가이드 링크 : [Branch prefix 가이드](https://github.com/ysy-mogagko/WIL/blob/main/Guide/branch-prefix.md)
