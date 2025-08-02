@@ -38,7 +38,7 @@ jobs:
             --base main \
             --head "${GITHUB_REF#refs/heads/}" \
             --title "${{ steps.set_param.outputs.title }}" \
-            --body-file  .github/pull_request_template.md
+            --body-file  .github/pull_request_template.md \
             --assignee "${{ github.actor }}"
 
       - name: pr labels update
