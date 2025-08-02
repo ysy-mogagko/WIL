@@ -10,9 +10,10 @@
 
 본인임을 알아볼 수 있도록 자유롭게 명명해주세요.
 
-- 브랜치의 경우 prefix를 넣을경우 pr이 편리하게 생성됩니다.
-  - 브랜치 명 앞에 'study/' 로 시작하면 pr 제목과 내용이 자동생성됩니다.
-  - prefix는 추가로 생성될 예정입니다.
+브랜치 명을 통해 컨벤션에 맞게 Pull Request가 자동 생성될 수도 있습니다.
+
+3번 챕터를 확인해주세요.
+
 
 ## 2. Pull Reaquests 작성 규칙
 
@@ -39,3 +40,20 @@
 ### Label (선택)
 
 공부한 내용에 따라 선택합니다. (원하는 내용이 없다면 본인이 추가 부탁드립니다)
+
+## Branch 접두어를 통한 Pull Request 자동생성
+
+브랜치의 경우 접두어를 넣을경우 Pull Request 가 자동으로 편리하게 생성됩니다.
+
+브랜치 명 앞에 특정 접두어로 시작하면 push할때 Pull Request가 컨벤션에 맞게 자동생성됩니다.
+
+기본적으로 'study/' 를 사용하면 아래 이미지처럼 default PR이 생성됩니다.
+
+![study prefix example pr](/Guide/image/branch-prefix/study-prefix.png)
+
+
+### label 자동 적용 접두어
+
+다양한 prefix가 있으니 아래 가이드 링크를 구경해보세요.
+
+- (Branch prefix 가이드)[https://github.com/ysy-mogagko/WIL/blob/main/Guide/branch-prefix.md]
