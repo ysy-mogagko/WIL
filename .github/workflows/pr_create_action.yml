@@ -8,6 +8,12 @@ on:
   push:
     branches:
       - study/*
+      - cs/*
+      - db/*
+      - comm/*
+      - algo/*
+      - work/*
+      - proj/*
       
 jobs:
   create_pr:
@@ -32,3 +38,25 @@ jobs:
             --head "${GITHUB_REF#refs/heads/}" \
             --title "${{ steps.set_param.outputs.title }}" \
             --body-file  .github/pull_request_template.md
+
+      - name: pr labels update
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        if : ${{ !contains(github.ref_name, 'study') }}
+        run: |
+          type=$(echo "${GITHUB_REF#refs/heads/}" | cut -d'/' -f1)
+          if [ "$type" = "cs" ]; then
+            gh pr edit  --add-label "Computer Science"
+          elif [ "$type" = "db" ]; then
+            gh pr edit  --add-label "DB/SQL"
+          elif [ "$type" = "comm" ]; then
+            gh pr edit  --add-label "커뮤니케이션"
+          elif [ "$type" = "algo" ]; then
+            gh pr edit  --add-label "알고리즘/자료구조"
+          elif [ "$type" = "work" ]; then
+            gh pr edit  --add-label "업무"
+          elif [ "$type" = "proj" ]; then
+            gh pr edit  --add-label "프로젝트"
+          else
+            echo "No specific label for type: $type"
+          fi
