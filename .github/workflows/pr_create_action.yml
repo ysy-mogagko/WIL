@@ -52,7 +52,7 @@ jobs:
           elif [ "$type" = "comm" ]; then
             gh pr edit  --add-label "Communication"
           elif [ "$type" = "algo" ]; then
-            gh pr edit  --add-label "알고리즘/자료구조
+            gh pr edit  --add-label "알고리즘/자료구조"
           elif [ "$type" = "work" ]; then
             gh pr edit  --add-label "업무"
           elif [ "$type" = "proj" ]; then
