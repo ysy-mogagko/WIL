@@ -5,3 +5,5 @@
 - [jungeu1509](https://github.com/jungeu1509/)
 - [DoggySummer](https://github.com/DoggySummer)
 - [Elnya](https://github.com/Elnya)
+- [choihyeongjun](https://github.com/choihyeongjun)
+- [wonnoa](https://github.com/wonnoa)
