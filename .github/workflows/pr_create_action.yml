@@ -27,8 +27,16 @@ jobs:
         id: set_param 
         run: |
           date=$(TZ=Asia/Seoul date +'%Y%m%d')
-          TITLE="$date ${{ github.actor }}"
+          actor="${{ github.actor }}"
+          if [ -z "$actor" ]; then
+            actor="${{ github.event.pusher.name }}"
+          fi
+          if [ -z "$actor" ]; then
+            actor="unknown-user"
+          fi
+          TITLE="$date $actor"
           echo "title=$TITLE" >> $GITHUB_OUTPUT
+          echo "actor=$actor" >> $GITHUB_OUTPUT
 
       - name: pr create use gh cli
         env:
@@ -39,7 +47,7 @@ jobs:
             --head "${GITHUB_REF#refs/heads/}" \
             --title "${{ steps.set_param.outputs.title }}" \
             --body-file  .github/pull_request_template.md \
-            --assignee "${{ github.actor }}"
+            --assignee "${{ steps.set_param.outputs.actor }}"
 
       - name: pr labels update
         env:
