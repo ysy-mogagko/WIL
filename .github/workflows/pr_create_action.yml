@@ -38,7 +38,18 @@ jobs:
           echo "title=$TITLE" >> $GITHUB_OUTPUT
           echo "actor=$actor" >> $GITHUB_OUTPUT
 
+      - name: check diff with main
+        id: diff_check
+        run: |
+          git fetch origin main
+          if git diff --quiet origin/main...HEAD; then
+            echo "no_diff=true" >> $GITHUB_OUTPUT
+          else
+            echo "no_diff=false" >> $GITHUB_OUTPUT
+          fi
+          
       - name: pr create use gh cli
+        if: steps.diff_check.outputs.no_diff == 'false'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -52,7 +63,7 @@ jobs:
       - name: pr labels update
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        if : ${{ !contains(github.ref_name, 'study') }}
+        if: steps.diff_check.outputs.no_diff == 'false' && !contains(github.ref_name, 'study')
         run: |
           type=$(echo "${GITHUB_REF#refs/heads/}" | cut -d'/' -f1)
           if [ "$type" = "cs" ]; then
