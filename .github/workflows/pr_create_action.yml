@@ -15,8 +15,6 @@ on:
       - work/*
       - proj/*
       - lic/*
-    branches-ignore:
-      - main
       
 jobs:
   create_pr:
