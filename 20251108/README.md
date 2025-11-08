@@ -6,3 +6,6 @@
 - [Elnya](https://github.com/Elnya)
 - [DoggySummer](https://github.com/DoggySummer)
 - [choihyeongjun](https://github.com/choihyeongjun)
+- [v1r4m](https://github.com/v1r4m)
+- [Develop-KIM](https://github.com/Develop-KIM)
+- [gwang1003](https://github.com/gwang1003)
