@@ -59,7 +59,12 @@ jobs:
             --head "${GITHUB_REF#refs/heads/}" \
             --title "${{ steps.set_param.outputs.title }}" \
             --body-file  .github/pull_request_template.md \
-            --assignee "${{ steps.set_param.outputs.actor }}"
+            --assignee "${{ steps.set_param.outputs.actor }}" || \
+          gh pr create \
+            --base main \
+            --head "${GITHUB_REF#refs/heads/}" \
+            --title "${{ steps.set_param.outputs.title }}" \
+            --body-file  .github/pull_request_template.md
 
       - name: pr labels update
         env:
