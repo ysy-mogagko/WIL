@@ -54,6 +54,10 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          if gh pr list --head "${GITHUB_REF#refs/heads/}" --base main | grep -q .; then
+            echo "PR already exists, skipping creation"
+            exit 0
+          fi
           gh pr create \
             --base main \
             --head "${GITHUB_REF#refs/heads/}" \
