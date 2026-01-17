@@ -16,6 +16,7 @@ on:
       - proj/*
       - lic/*
       - port/*
+      - skil/*
       
 jobs:
   create_pr:
@@ -92,6 +93,8 @@ jobs:
             gh pr edit  --add-label "자격증"
           elif [ "$type" = "port" ]; then
             gh pr edit  --add-label "이력서/포트폴리오"
+          elif [ "$type" = "skil" ]; then
+            gh pr edit  --add-label "기술스택"
           else
             echo "No specific label for type: $type"
           fi
