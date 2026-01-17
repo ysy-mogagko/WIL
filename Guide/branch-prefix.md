@@ -28,6 +28,7 @@ pr 에서 공부 내용에 따라 labels 를 선택할 수 있습니다.
 |업무|work/|
 |프로젝트|proj/
 |자격증|lic/|
+|기술스택|skil/|
 
 
 ### prefix 적용 예시 'proj/'
