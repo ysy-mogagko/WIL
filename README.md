@@ -64,4 +64,4 @@
 
 다양한 prefix가 있으니 아래 가이드 링크를 구경해보세요.
 
-> Branch prefix 가이드 링크 : [Branch prefix 가이드](https://github.com/ysy-mogagko/WIL/blob/main/Guide/branch-prefix.md)
+> Branch prefix 가이드 링크 : [Branch prefix 가이드](https://github.com/ysy-mogagko/WIL/wiki/Branch-Prefix-%EB%A5%BC-%ED%86%B5%ED%95%9C-Pull-Request-%EC%9E%90%EB%8F%99%EC%83%9D%EC%84%B1-%EA%B0%80%EC%9D%B4%EB%93%9C)
