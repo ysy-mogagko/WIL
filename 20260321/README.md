@@ -6,5 +6,6 @@
 - [Elnya](https://github.com/Elnya)
 - [yoonssrong](https://github.com/yoonssrong)
 - [eehwan](https://github.com/eehwan)
+- [hjs1212](https://github.com/hjs1212)
 - 박*수
 - 한*훈
