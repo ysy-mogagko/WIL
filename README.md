@@ -57,7 +57,7 @@
 
 기본적으로 'study/' 를 사용하면 아래 이미지처럼 default PR이 생성됩니다.
 
-![study prefix example pr](/Guide/image/branch-prefix/study-prefix.png)
+![study prefix example pr](/image/branch-prefix/study-prefix.png)
 
 
 ### label 자동 적용 접두어
